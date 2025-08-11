@@ -34,7 +34,7 @@ Here's how your code flows from commit to deployment:
 - Runs tests (pytest)
 - Builds Docker image
 - Optionally scans the image
-- Tags the image with ${GIT_COMMIT} or a semantic version
+- Tags the image with git commit or a semantic version
 - Jenkins pushes the image to AWS ECR.
 - Jenkins updates Kubernetes manifests (or Helm values) in the manifests Git repo with the new image tag.
 
@@ -43,6 +43,8 @@ Here's how your code flows from commit to deployment:
 - Monitors the manifests repo
 - Detects changes
 - Syncs the cluster with the new image
-  Rollback:
+
+### Rollback:
+
 - Can be triggered via ArgoCD
 - Or by reverting the manifest commit
