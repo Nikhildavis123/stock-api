@@ -23,8 +23,9 @@ Access the API at: http://localhost:8000
 
 Sample:http://localhost:8000/api/stats?ticker=MSFT&start=2023-01-01&end=2023-12-31
 
-CI/CD Pipeline Overview
-Here's how your code flows from commit to deployment:
+## CI/CD Pipeline Overview
+
+Here's code flows from commit to deployment:
 
 - Developer pushes code to the Git repository.
 - Jenkins pipeline triggers via webhook or Multibranch setup.
@@ -34,7 +35,7 @@ Here's how your code flows from commit to deployment:
 - Runs tests (pytest)
 - Builds Docker image
 - Optionally scans the image
-- Tags the image with git commit or a semantic version
+- Tags the image with git commit version or a semantic version
 - Jenkins pushes the image to AWS ECR.
 - Jenkins updates Kubernetes manifests (or Helm values) in the manifests Git repo with the new image tag.
 
