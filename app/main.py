@@ -39,6 +39,7 @@ def get_stock_stats(ticker: str, start: Optional[str] = None, end: Optional[str]
         logger.warning(f"No data found for {ticker}")
         raise HTTPException(status_code=404, detail="No data found")
 
+    logger.info(df)
     stats = {
         "ticker": ticker,
         "start": start,
